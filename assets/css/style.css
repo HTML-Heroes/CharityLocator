@@ -1,0 +1,11 @@
+/* using Materialize css */
+body{
+    /* background-color: bisque; */
+    background-image: url(../images/image.png);
+    /* background-image: url(../images/charity1.png); */
+    /*stretching image to fill  */
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center; 
+    background-attachment: fixed;
+}
