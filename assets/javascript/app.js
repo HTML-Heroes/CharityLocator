@@ -1,6 +1,6 @@
 //this is the app.js file
 // 
-
+// firebase storage 
 //api information
 //response
 function searchOrganizations() {
@@ -11,13 +11,11 @@ function searchOrganizations() {
 
     $.ajax(settings).then(function (response) {
         console.log(response);
-        updatePage(response);
-
+        return response;
     });
 
     function updatePage(response) {
         //limit the number of responses?  (default or user selection)
-        
         var numberOrgs = response.length;
 
         for (var i = 0; i < numberOrgs; i++) {
@@ -25,32 +23,39 @@ function searchOrganizations() {
             var charityName = response[i].charityName;
             var ein = response[i].ein;
             console.log("Charity Name" + charityName+ "--- EIN" + ein)
-            createCharityBtns(charityName);
+            createCharityBtns(charityName,ein);
         }
-    }
+    };
 
-    function createCharityBtns(charityName){
+    function createCharityBtns(charityName,ein){
         // create the button with the charity name
-        var charityDiv = $("<div>");
-
         var charityBtn = $('<button>');
         var p = $('<p>').text(charityName);
         //id should be the ein 
-        
-
-
-    }
+        charityBtn.addClass("charity");
+        charityBtn.attr("id",ein);
+        charityBtn.append(p);
+        $("#infoOne").prepend(charityBtn);
+    };
 }
-// $("#search").on("click", function(event) {
-//     event.preventDefault();
-//     searchOrganizations();
-// }
+
+/////////////////////////////Event Handlers/////////////////////////////////
+// click charityBtn 
+// get button id = ein
+// list out the charity specific details
+// second api call with ein
+//////////////////
+$("#search").on("click", function(event) {
+    event.preventDefault();
+    searchOrganizations();
+    updatePage(response);
+});
 
 /////////////////////////////////////Function Calls////////////////////////////////
-searchOrganizations();
+// searchOrganizations();
 
 
-//return ein for more detailed
+
 
 //Transfer from api to html
 //$("#city").
