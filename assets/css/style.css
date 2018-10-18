@@ -9,3 +9,6 @@ body{
     background-position: center; 
     background-attachment: fixed;
 }
+.form{
+    inline-size: 5px;
+}
