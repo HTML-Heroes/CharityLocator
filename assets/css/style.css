@@ -9,6 +9,5 @@ body{
     background-position: center; 
     background-attachment: fixed;
 }
-.form{
-    inline-size: 5px;
-}
+
+/* https://www.tutorialspoint.com/materialize/materialize_form.htm */
