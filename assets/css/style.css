@@ -9,5 +9,7 @@ body{
     background-position: center; 
     background-attachment: fixed;
 }
-
+.container .row {
+    margin-top: 1.2em;
+  }
 /* https://www.tutorialspoint.com/materialize/materialize_form.htm */
