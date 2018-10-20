@@ -7,6 +7,7 @@
     <title>HTML Heroes</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Google Fonts   -->
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <!-- CSS Link -->
@@ -35,17 +36,17 @@
         <form action="">
             <div class="row">
                 <div class="input-field col s8">
-                  <input placeholder="type name of charity" id="Charity Name" type="text" class="validate">
-                  <label for="first_name">Search by Charity Name</label>
+                  <input id="charityName" type="text" class="validate">
+                  <label for="charityName">Search by Charity Name</label>
                 </div>
                 <div class="input-field col s4">
-                    <input id="State" type="text" class="validate">
-                    <label for="state_name">State</label>
+                    <input id="state" type="text" class="validate">
+                    <label for="state">State</label>
                 </div>
             <div class="row">
                 <div class="input-field col s8">
                     <input id="city" type="text" class="validate">
-                    <label for="city_name">city</label>
+                    <label for="city">City</label>
                 </div>
                 <div class="input-field col s4">
                     <input id="zipcode" type="text" class="validate">
@@ -53,9 +54,10 @@
                 </div>
             </div>
             
-            <a class="waves-effect waves-light btn-small" id="search"><i class="material-icons right">search</i></a>
+            <a class="waves-effect waves-light btn-small" id="search"><i class="material-icons left">search</i> Search</a>
         </form>
     </div>
+
 
         <!-- Create 4 input text fields -->
         <div class="row" id ="dropDowns"></div>
@@ -130,6 +132,7 @@
                    
                    </div>      
        </div>
+
         <div class="row" id="infoOne"></div>
         <!-- Create 2 columns -->
         <!-- First column needs to have charity name plus 5 other columns -->
