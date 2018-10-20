@@ -9,13 +9,21 @@ body{
     background-position: center; 
     background-attachment: fixed;
 }
+#apiInputs{
+    margin: 25px 0;
+    padding: 20px;
+    border: 1px solid lightgray;
+    background-color: white;
+}
 #containerBody{
   
     background-color: blanchedalmond;
 }
 
 #rowOne{
-    background-color: chartreuse;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1kOhRnIjzoMP98e4QfxyeujiCbqrEhtW-H3LQH61lXK1dF72R-A');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #infoOne{
    

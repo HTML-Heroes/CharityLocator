@@ -258,10 +258,14 @@ $(document).ready(function () {
 
         var searchTerm = $("#charityName").val().trim();
         var state = $("#state").val().trim();
+<<<<<<< Updated upstream
         // var city = $("#city").val().trim();
         // var zip = $("#zipcode").val().trim();
 
         // if (searchTerm || state || city || zip) {
+=======
+
+>>>>>>> Stashed changes
         if (searchTerm || state) {
             searchOrganizations();
             $("form")[0].reset();
