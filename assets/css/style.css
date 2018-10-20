@@ -20,10 +20,14 @@ body{
 #infoOne{
    
     text-align: center;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     outline-color: blue;
     background-color: aqua;
     min-height: 300px;
+}
+
+#rowTwo{
+    background-color: deeppink;
 }
 
 #headerRow{
