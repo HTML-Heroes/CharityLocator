@@ -34,22 +34,7 @@ function buildSearchQueryURL() {
         queryParams.state = state
     };
 
-    // var city = $("#city")
-    //     .val()
-    //     .trim();
-
-    // if (city) {
-    //     queryParams.city = city
-    // };
-
-    // var zip = $("#zipcode")
-    //     .val()
-    //     .trim();
-
-    // if (zip) {
-    //     queryParams.zip = zip
-    // };
-
+ 
     console.log(queryURL + $.param(queryParams));
     return queryURL + $.param(queryParams);
 }
@@ -107,7 +92,7 @@ $(document).ready(function () {
         var cSpan = $('<span>');
         var cInfo = $('<div>');
         var cInfoContent = $('<p>');
-        var cHREF = $('<a>');
+        var cHREF = $('<a>').addClass("moreInfoLink");
 
         charityCrd.addClass("card charity green darken-1");
         cSpan.addClass("card-title");
@@ -267,7 +252,7 @@ $(document).ready(function () {
     });
 
 
-    $(document).on("click", ".charity", function () {
+    $(document).on("click", ".moreInfoLink", function () {
         var ein = $(this).attr("id");
         getOrganization(ein, APPID, APIKEY);
     });
