@@ -14,6 +14,10 @@ body{
     background-color: blanchedalmond;
 }
 
+.card charity{
+    
+}
+
 #rowOne{
     background-color: chartreuse;
 }
@@ -22,13 +26,14 @@ body{
     text-align: center;
     /* margin-left: 50px; */
     outline-color: blue;
-    background-color: aqua;
+    outline-width: 10px;
+    /* background-color: aqua; */
     min-height: 300px;
 }
 
-#rowTwo{
+/* #rowTwo{
     background-color: deeppink;
-}
+} */
 
 #headerRow{
     
@@ -53,3 +58,8 @@ body{
     transition: 2s;
 }
 /* https://www.tutorialspoint.com/materialize/materialize_form.htm */
+
+#pictureOne{
+    background-image: url(../images/image.png);
+    
+}
