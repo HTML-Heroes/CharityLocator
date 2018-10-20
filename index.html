@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML Heroes</title>
+    <title>Charity Locator</title>
+    <link rel="shortcut icon" href="https://imageskincare.com/static/version1527850987/frontend/Pearl/weltpixel_custom/en_US/images/loctn.png">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <!--Google Fonts   -->
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <!-- CSS Link -->
@@ -21,124 +22,60 @@
 <body>
   
     <div class="container" id="containerBody">
-        <div class="col s12">
-            <nav>
-                <div class="nav-wrapper cyan lighten-4">
-                    <a href="index.html" class="brand-logo right">
-                        <img src="./assets/images/image.png"  height="65px" width="110px" alt="our team-logo">
+        <div class="col s12" id="headerRow">
+            <!-- <nav> -->
+                <!-- <div class="nav-wrapper white"> -->
+                    <a href="index.html" class="brand-logo">
+                        <img src="./assets/images/Logo_test.png"  height="80px" width="160px" alt="our team-logo">
                     </a>
-                    <a class="waves-effect waves-light btn pulse deep-orange lighten-3">Donate</a>
-                </div>
-            </nav>
+                <!-- </div> -->
+            <!-- </nav> -->
         </div> 
         <hr>
         <br>
-        <form action="">
-            <div class="row">
-                <div class="input-field col s8">
-                  <input id="charityName" type="text" class="validate">
-                  <label for="charityName">Search by Charity Name</label>
-                </div>
-                <div class="input-field col s4">
-                    <input id="state" type="text" class="validate">
-                    <label for="state">State</label>
-                </div>
-            <div class="row">
-                <div class="input-field col s8">
-                    <input id="city" type="text" class="validate">
-                    <label for="city">City</label>
-                </div>
-                <div class="input-field col s4">
-                    <input id="zipcode" type="text" class="validate">
-                    <label for="zipcode">Zip Code</label>
-                </div>
+        <div class="row" id="rowOne">
+            <div class ="col s12"> 
+            <div class="col s6">
+                <!-- <section>
+                    <img src="https://freehaifa.files.wordpress.com/2016/01/one_world_with_hands.jpeg?w=1200"  width="300px" height="310px" alt="">
+                </section> -->
             </div>
-            
-            <a class="waves-effect waves-light btn-small" id="search"><i class="material-icons left">search</i> Search</a>
-        </form>
-    </div>
-
-
-        <!-- Create 4 input text fields -->
-        <div class="row" id ="dropDowns"></div>
-        <!-- Create 1 dropdown for each text field category... each dropdown needs to accept list -->
-       <!-- Creating 1st of 4 columns in 2nd row for Dropdown Menus -->
-        <div class="col s3" id= dropdownOne>
-        <!-- Dropdown Trigger -->
-            <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>1stDD</a>
-
-            <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!">one</a></li>
-            <li><a href="#!">two</a></li>
-            <li class="divider" tabindex="-1"></li>
-            <li><a href="#!">three</a></li>
-            <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-            <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-            </ul>
-       
-       </div>
-
-              <!-- Creating 2nd of 4 columns in 2nd row for Dropdown Menus -->
-              <div class="col s3" id= dropdownTwo>
-                <!-- Dropdown Trigger -->
-                    <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>2ndDD</a>
-        
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="#!">three</a></li>
-                    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                    </ul>
-               
-               </div>
-
-               <!-- Creating 3rd of 4 columns in 2nd row for Dropdown Menus -->
-               <div class="col s3" id= dropdownThree>
-                <!-- Dropdown Trigger -->
-                    <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>3rdDD</a>
-        
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="#!">three</a></li>
-                    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                    </ul>
-               
-               </div>
+            <div class="col s6" id="apiInputs">
+               <form>
+                <label for="searchName">Charity Name</label>
+                <input  id="charityName" type="text" class="form-control" placeholder="Search by organization name" aria-label="Search" aria-describedby="basic-addon1">
                 
+                <label for="state_name">State</label>
+                
+                <input id="state" type="text" class="validate" placeholder="ex: AL">
+                <!-- <button class="btn btn-primary" id="search">Search</button> -->
+                <a class="waves-effect waves-light btn-large" id ="search" >Search</a>
+            </form> 
+            </div>
 
-       
-                <!-- Creating 4 of 4 columns in 2nd row for Dropdown Menus -->
-                <div class="col s3" id= dropdownFour>
-                    <!-- Dropdown Trigger -->
-                        <a class='dropdown-trigger btn' href='#' data-target='dropdown4'>4thDD</a>
-            
-                        <!-- Dropdown Structure -->
-                        <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="#!">one</a></li>
-                        <li><a href="#!">two</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="#!">three</a></li>
-                        <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                        <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                        </ul>
-                   
-                   </div>      
-       </div>
+         </div> 
 
-        <div class="row" id="infoOne"></div>
-        <!-- Create 2 columns -->
-        <!-- First column needs to have charity name plus 5 other columns -->
+        </div>
+     
+   
+          <div class="row" id="pictureOne">
+                <div class ="col s12"> 
+            <img src="./assets/images/image.png"  id="logoOne" alt="our team-logo">
+                </div>
+          </div>
+      
+
+        <div class="row" id="rowTwo">
+                <div class ="col s12" id="infoOne">
+
+
+                </div>
+
+        </div>
+     
         <!-- Not sure what 2nd column could be used for -->
-       <div class="row" id="pictureOne"></div>
-       <!-- Picture spacer -->
+  
+        
 
         <div class="row" id="infoTwo"></div>
         <!-- Expanded details about charity based on what was selected from info one -->
@@ -153,8 +90,8 @@
 
 
 
-
-
+        </div>
+     </div>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
