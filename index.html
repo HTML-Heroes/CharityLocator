@@ -22,7 +22,7 @@
 <body>
   
     <div class="container" id="containerBody">
-        <div class="col s12">
+        <div class="col s12" id="headerRow">
             <!-- <nav> -->
                 <!-- <div class="nav-wrapper white"> -->
                     <a href="index.html" class="brand-logo">
@@ -33,13 +33,14 @@
         </div> 
         <hr>
         <br>
-        <div class="row">
+        <div class="row" id="rowOne">
+            <div class ="col s12"> 
             <div class="col s6">
                 <section>
                     <img src="https://freehaifa.files.wordpress.com/2016/01/one_world_with_hands.jpeg?w=1200"  width="300px" height="310px" alt="">
                 </section>
             </div>
-            <div class="col s6">
+            <div class="col s6" id="apiInputs">
                 
                 
                 <input  id="charityName" type="text" class="form-control" placeholder="Search by organization name" aria-label="Search" aria-describedby="basic-addon1">
@@ -50,14 +51,22 @@
                 <!-- <button class="btn btn-primary" id="search">Search</button> -->
                 <a class="waves-effect waves-light btn-large" id = "search" >Search</a>
             </div>
-          
+
+         </div> 
+
         </div>
      
    
      
-       </div>
+      
 
-        <div class="row" id="infoOne"></div>
+        <div class="row" id="rowTwo">
+                <div class ="col s12" id="infoOne">
+
+
+                </div>
+
+        </div>
      
         <!-- Not sure what 2nd column could be used for -->
        <div class="row" id="pictureOne"></div>
@@ -76,8 +85,8 @@
 
 
 
- </div>
-
+        </div>
+     </div>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
