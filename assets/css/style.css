@@ -9,10 +9,29 @@ body{
     background-position: center; 
     background-attachment: fixed;
 }
+#containerBody{
+  
+    background-color: blanchedalmond;
+}
+
+#rowOne{
+    background-color: chartreuse;
+}
 #infoOne{
-    width: 980px;
+   
     text-align: center;
     margin-left: 50px;
+    outline-color: blue;
+    background-color: aqua;
+    min-height: 300px;
+}
+
+#headerRow{
+    
+    text-align: center;
+    margin-left: 50px;
+    outline-color: blue;
+    background: purple;
 }
 #infoOne button{
     background-color: lavenderblush;
