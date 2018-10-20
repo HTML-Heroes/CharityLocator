@@ -101,17 +101,15 @@ $(document).ready(function () {
 
     function createCharityCards(charityName, ein, state) {
 
-        // create the button with the charity name
-        // var charityImg = $('<img>);
         console.log("Creating the cards");
 
-        var charityCrd = $('<card>'); //overall card 
+        var charityCrd = $('<div>'); //overall div 
         var cSpan = $('<span>');
         var cInfo = $('<div>');
         var cInfoContent = $('<p>');
         var cHREF = $('<a>');
 
-        charityCrd.addClass("card charity");
+        charityCrd.addClass("card charity green darken-1");
         cSpan.addClass("card-title");
         cSpan.text(charityName);
 
@@ -131,8 +129,6 @@ $(document).ready(function () {
         charityCrd.append(cSpan);
 
         $("#infoOne").prepend(charityCrd);
-
-
     };
 
     function getOrganization(ein, APPID, APIKEY) {
@@ -246,7 +242,6 @@ $(document).ready(function () {
                         .text(website)
                         .appendTo(newDiv);
                 };
-
                 orgArea.append(newDiv);
             })
     };
