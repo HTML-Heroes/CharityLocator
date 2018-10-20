@@ -34,21 +34,21 @@ function buildSearchQueryURL() {
         queryParams.state = state
     };
 
-    var city = $("#city")
-        .val()
-        .trim();
+    // var city = $("#city")
+    //     .val()
+    //     .trim();
 
-    if (city) {
-        queryParams.city = city
-    };
+    // if (city) {
+    //     queryParams.city = city
+    // };
 
-    var zip = $("#zipcode")
-        .val()
-        .trim();
+    // var zip = $("#zipcode")
+    //     .val()
+    //     .trim();
 
-    if (zip) {
-        queryParams.zip = zip
-    };
+    // if (zip) {
+    //     queryParams.zip = zip
+    // };
 
     console.log(queryURL + $.param(queryParams));
     return queryURL + $.param(queryParams);
@@ -83,10 +83,11 @@ $(document).ready(function () {
             var state = response[i].mailingAddress.stateOrProvince;
             //console.log("Charity Name" + charityName + "--- EIN" + ein)
             // createCharityBtns(charityName, ein, state);
-            createCharityCard(charityName, ein, state);
+            createCharityCards(charityName, ein, state);
         }
     };
 
+    // Replaced createCharityBtns method with 
     function createCharityBtns(charityName, ein, state) {
         // create the button with the charity name
         var charityBtn = $('<button>');
@@ -98,7 +99,7 @@ $(document).ready(function () {
         $("#infoOne").prepend(charityBtn);
     };
 
-    function createCharityCard(charityName, ein, state) {
+    function createCharityCards(charityName, ein, state) {
 
         // create the button with the charity name
         // var charityImg = $('<img>);
@@ -109,18 +110,18 @@ $(document).ready(function () {
         var cInfo = $('<div>');
         var cInfoContent = $('<p>');
         var cHREF = $('<a>');
-       
+
         charityCrd.addClass("card charity");
         cSpan.addClass("card-title");
         cSpan.text(charityName);
-        
-        cInfo.addClass("card-content");
-        cInfoContent.text("Location: " +state);
 
-        cSrc=$('<div>').addClass("card-action");
-         //id should be the ein 
+        cInfo.addClass("card-content");
+        cInfoContent.text("Location: " + state);
+
+        cSrc = $('<div>').addClass("card-action");
+        //id should be the ein 
         cHREF.attr("id", ein);
-        cHREF.attr("href", "http://www.cnn.com");
+        cHREF.attr("href","more.html");
         cHREF.text("More Charity Info");
 
         cSrc.append(cHREF);
@@ -161,7 +162,7 @@ $(document).ready(function () {
                 var state = response.mailingAddress.stateOrProvince;
                 var zip = response.mailingAddress.postalCode;
                 var website = response.websiteURL;
-                console.log(charName, tagLine, mission, deductability, subsection, classification, street, city, state, zip, website);
+                console.log(charName, tagLine, mission, deductability, subsection, classification, street, state, website);
 
                 var newDiv = $("<div>")
                     .addClass("charityInfo");
@@ -262,10 +263,11 @@ $(document).ready(function () {
 
         var searchTerm = $("#charityName").val().trim();
         var state = $("#state").val().trim();
-        var city = $("#city").val().trim();
-        var zip = $("#zipcode").val().trim();
+        // var city = $("#city").val().trim();
+        // var zip = $("#zipcode").val().trim();
 
-        if (searchTerm || state || city || zip) {
+        // if (searchTerm || state || city || zip) {
+        if (searchTerm || state) {
             searchOrganizations();
             $("form")[0].reset();
 
