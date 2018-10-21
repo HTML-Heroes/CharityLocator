@@ -87,13 +87,14 @@ $(document).ready(function () {
 
         console.log("Creating the cards");
 
+        var cColDiv = $('<div>').addClass("col s12 m6");
         var charityCrd = $('<div>'); //overall div 
         var cSpan = $('<span>');
         var cInfo = $('<div>');
         var cInfoContent = $('<p>');
         var cHREF = $('<a>').addClass("moreInfoLink");
 
-        charityCrd.addClass("card charity green darken-1");
+        charityCrd.addClass("card charity teal lighten-1");
         cSpan.addClass("card-title");
         cSpan.text(charityName);
 
@@ -111,8 +112,9 @@ $(document).ready(function () {
         cInfo.append(cInfoContent);
         cSpan.append(cInfo);
         charityCrd.append(cSpan);
+        cColDiv.append(charityCrd);
 
-        $("#infoOne").prepend(charityCrd);
+        $("#infoOne").prepend(cColDiv);
     };
 
     function showArticles(response) {
