@@ -87,35 +87,39 @@ $(document).ready(function () {
 
         console.log("Creating the cards");
 
+        var cColDiv = $('<div>').addClass("col s12 m6");
         var charityCrd = $('<div>'); //overall div 
         var cSpan = $('<span>');
         var cInfo = $('<div>');
         var cInfoContent = $('<p>');
         var cHREF = $('<a>').addClass("moreInfoLink");
 
-        charityCrd.addClass("card charity green darken-1");
+        charityCrd.addClass("card charity lighten-5 z-depth-3");
         cSpan.addClass("card-title");
         cSpan.text(charityName);
 
         cInfo.addClass("card-content");
-        cInfoContent.text("Location: " + state);
+        cInfoContent.text("Location: " + state + "📍");
 
         cSrc = $('<div>').addClass("card-action");
         //id should be the ein 
         cHREF.attr("id", ein);
         // cHREF.attr("href","more.html");
-        cHREF.text("More Charity Info");
+        cHREF.text("More Charity Info →");
 
         cSrc.append(cHREF);
         cInfoContent.append(cSrc);
         cInfo.append(cInfoContent);
         cSpan.append(cInfo);
         charityCrd.append(cSpan);
+        cColDiv.append(charityCrd);
 
-        $("#infoOne").prepend(charityCrd);
+        $("#infoOne").prepend(cColDiv);
     };
 
     function showArticles(response) {
+        $("#pictureTwo").empty();
+
         var articles = response.articles;
 
         var numArticles = articles.length;
@@ -175,7 +179,7 @@ $(document).ready(function () {
             }
 
             // Append and log url
-            $articleListItem.append("<a href='" + article.url + "'>" + article.url + "</a>");
+            $articleListItem.append("<a href='" + article.url + "' target=_blank'>" + article.url + "</a>");
             console.log(article.url);
 
             // Append the article
@@ -330,8 +334,10 @@ $(document).ready(function () {
                 };
 
                 if (website) {
-                    var webURL = $("<p>")
+                    var webURL = $("<a>")
                         .addClass("website")
+                        .attr("href",website)
+                        .attr("target","_blank")
                         .text(website)
                         .appendTo(newDiv);
                 };
@@ -356,8 +362,9 @@ $(document).ready(function () {
 
         if (searchTerm || state) {
             searchOrganizations();
-            $("form")[0].reset();
-
+            //$("form")[0].reset();
+            $("#charityName").val('');
+            $("#state").val('');
         }
     });
 
