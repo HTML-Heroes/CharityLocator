@@ -56,11 +56,13 @@ input:focus {
     font-size: 48px;
     text-align: center!important;
     position: relative;
-    padding: 30px;
+    top: 10px;
+    left: 10px;
+    width: auto;
 }
 .card-content {
     color: red;
-    font-size: larger;
+    font-size: large;
     font-weight: bold;
 }
 .card .card-action {

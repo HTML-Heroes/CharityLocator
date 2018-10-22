@@ -96,16 +96,16 @@ $(document).ready(function () {
 
         charityCrd.addClass("card charity gblue-grey lighten-5 z-depth-3");
         cSpan.addClass("card-title");
-        cSpan.text(charityName);
+        cSpan.text("`" + charityName + "`");
 
         cInfo.addClass("card-content");
-        cInfoContent.text("Location: " + state);
+        cInfoContent.text("Location: " + state + "📍");
 
         cSrc = $('<div>').addClass("card-action");
         //id should be the ein 
         cHREF.attr("id", ein);
         // cHREF.attr("href","more.html");
-        cHREF.text("More Charity Info");
+        cHREF.text("More Charity Info →");
 
         cSrc.append(cHREF);
         cInfoContent.append(cSrc);
