@@ -362,8 +362,9 @@ $(document).ready(function () {
 
         if (searchTerm || state) {
             searchOrganizations();
-            $("form")[0].reset();
-
+            //$("form")[0].reset();
+            $("#charityName").val('');
+            $("#state").val('');
         }
     });
 
