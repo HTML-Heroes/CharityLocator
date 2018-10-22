@@ -81,31 +81,6 @@ input:focus {
 .moreInfoLink:hover{
     color: black!important;
 }
-/* #infoOne{
-   
-    text-align: center;
-    margin-left: 50px;
-    outline-color: blue;
-    outline-width: 10px;
-    background-color: aqua;
-    min-height: 300px;
-} */
-
-/* #infoOne button{
-    background-color: lavenderblush;
-    border: 1px solid gray;
-    font-family: 'Times New Roman', Times, serif;
-    cursor: pointer;
-    padding: 10px;
-    margin: 15px;
-    border-radius: 4px;
-    font-size: bolder;
-
-}
-#infoOne button:hover{
-    transform: scale(1.1);
-    transition: 2s;
-} */
 /* https://www.tutorialspoint.com/materialize/materialize_form.htm */
 
 #pictureOne{
