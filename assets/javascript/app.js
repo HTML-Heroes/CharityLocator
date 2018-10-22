@@ -94,9 +94,9 @@ $(document).ready(function () {
         var cInfoContent = $('<p>');
         var cHREF = $('<a>').addClass("moreInfoLink");
 
-        charityCrd.addClass("card charity gblue-grey lighten-5 z-depth-3");
+        charityCrd.addClass("card charity lighten-5 z-depth-3");
         cSpan.addClass("card-title");
-        cSpan.text("`" + charityName + "`");
+        cSpan.text(charityName);
 
         cInfo.addClass("card-content");
         cInfoContent.text("Location: " + state + "📍");
@@ -118,6 +118,8 @@ $(document).ready(function () {
     };
 
     function showArticles(response) {
+        $("#pictureTwo").empty();
+
         var articles = response.articles;
 
         var numArticles = articles.length;
@@ -177,7 +179,7 @@ $(document).ready(function () {
             }
 
             // Append and log url
-            $articleListItem.append("<a href='" + article.url + "'>" + article.url + "</a>");
+            $articleListItem.append("<a href='" + article.url + "' target=_blank'>" + article.url + "</a>");
             console.log(article.url);
 
             // Append the article
@@ -332,8 +334,10 @@ $(document).ready(function () {
                 };
 
                 if (website) {
-                    var webURL = $("<p>")
+                    var webURL = $("<a>")
                         .addClass("website")
+                        .attr("href",website)
+                        .attr("target","_blank")
                         .text(website)
                         .appendTo(newDiv);
                 };

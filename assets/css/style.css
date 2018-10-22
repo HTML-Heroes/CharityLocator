@@ -54,10 +54,8 @@ input:focus {
 .card-title {
     font-family: 'Slabo 27px', serif;
     font-size: 48px;
-    text-align: center!important;
     position: relative;
     top: 10px;
-    left: 10px;
     width: auto;
 }
 .card-content {
@@ -69,9 +67,13 @@ input:focus {
     cursor: pointer;
     font-size: 15px!important;
     padding: 10px;
-    text-decoration: underline;
-    
+    text-decoration: underline;   
 }
+
+.card {
+    text-align:center;
+}
+
 .moreInfoLink{
     padding-bottom: 5px;
     color: rgb(116, 116, 116)!important;
