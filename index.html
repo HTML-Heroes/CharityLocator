@@ -21,77 +21,96 @@
 </head>
 <body>
   
-    <div class="container" id="containerBody">
+<div class="container" id="containerBody">
         <div class="col s12" id="headerRow">
-            <!-- <nav> -->
-                <!-- <div class="nav-wrapper white"> -->
-                    <a href="index.html" class="brand-logo">
-                        <img src="./assets/images/Logo_test.png"  height="80px" width="160px" alt="our team-logo">
+            <nav>
+                <div class="nav-wrapper white">
+                    <a href="index.html" class="brand-logo center">
+                        <img src="./assets/images/Logo_test.png"  height="64px" width="160px" alt="our team-logo">
                     </a>
-                <!-- </div> -->
-            <!-- </nav> -->
+                </div>
+            </nav>
         </div> 
         <hr>
         <br>
-        <div class="row" id="rowOne">
-            <div class ="col s12"> 
-            <div class="col s6">
-                <!-- <section>
-                    <img src="https://freehaifa.files.wordpress.com/2016/01/one_world_with_hands.jpeg?w=1200"  width="300px" height="310px" alt="">
-                </section> -->
-            </div>
-            <div class="col s6" id="apiInputs">
-               <form>
-                <label for="searchName">Charity Name</label>
-                <input  id="charityName" type="text" class="form-control" placeholder="Search by organization name" aria-label="Search" aria-describedby="basic-addon1">
-                
-                <label for="state_name">State</label>
-                
-                <input id="state" type="text" class="validate" placeholder="ex: AL">
-                <!-- <button class="btn btn-primary" id="search">Search</button> -->
-                <a class="waves-effect waves-light btn-large" id ="search" >Search</a>
-            </form> 
-            </div>
-
-         </div> 
-
+    <div class="row" id="rowOne">
+        <div class="col">
+        <div class="row" id="apiInputs">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input  id="charityName" type="text" class="form-control validate" placeholder="Enter charity name or keyword" aria-label="Search" aria-describedby="basic-addon1">
+                        <label for="searchName">Search for Charities</label>
+                    </div>
+                </div>
+                <div class="row">    
+                    <div class="input-field col s12">
+                        <input id="state" type="text" class="validate" placeholder="ex: AL" data-length="2">
+                        <label for="state_name">State</label>
+                    </div>
+                </div>
+                 
+                <div class="row">
+                    <div class="col s3">
+                        <a class="waves-effect waves-light btn" id ="search" >Search</a>
+                    </div> 
+                </div>
+            </form>    
         </div>
+        </div>
+    </div> 
      
    
-          <div class="row" id="pictureOne">
-                <div class ="col s12"> 
-            <img src="./assets/images/image.png"  id="logoOne" alt="our team-logo">
-                </div>
-          </div>
+    <div class="row" id="pictureOne">
+        <div class ="col s12"> 
+    <!-- <img src="./assets/images/image.png"  id="logoOne" alt="our team-logo"> -->
+        </div>
+    </div>
       
 
-        <div class="row" id="rowTwo">
-                <div class ="col s12" id="infoOne">
-
-
-                </div>
-
-        </div>
+    <div class="row" id="rowTwo">
+        <div class="col s12 m4 l2"></div>
+        <div class ="col s12 m4 l8" id="infoOne"></div> 
+        <div class="col s12 m4 l2"></div> 
+    </div>
      
-        <!-- Not sure what 2nd column could be used for -->
+    <!-- Not sure what 2nd column could be used for -->
   
         
 
-        <div class="row" id="infoTwo"></div>
-        <!-- Expanded details about charity based on what was selected from info one -->
+    <div class="row" id="infoTwo"></div>
+    <!-- Expanded details about charity based on what was selected from info one -->
        
        
-        <div class="row" id="pictureTwo"></div>
-        <!-- Picture spacer -->
+    <div class="row" id="pictureTwo"></div>
+    <!-- Picture spacer -->
+    <footer>
+        <div class="row">
+            <div class="col s12 center">
+                <a href="#">
+                    <img src="https://cdn0.iconfinder.com/data/icons/social-media-2071/100/social-05-512.png" height="50px" alt="gmail">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+                <a href="#">
+                    <img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/linkedin-512.png" height="50px" alt="LinkedIn">
+                </a>
+                <a href="#">
+                    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/github-512.png" height="50px" alt="GitHub">
+                </a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center">
+            © 2018 Powered by HTML Heroes
+            </div>
+        </div>
+    </footer>
 
+</div>
 
-    </div>
  
 
 
-
-        </div>
-     </div>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

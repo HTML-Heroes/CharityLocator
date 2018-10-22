@@ -94,7 +94,7 @@ $(document).ready(function () {
         var cInfoContent = $('<p>');
         var cHREF = $('<a>').addClass("moreInfoLink");
 
-        charityCrd.addClass("card charity teal lighten-1");
+        charityCrd.addClass("card charity gblue-grey lighten-5 z-depth-3");
         cSpan.addClass("card-title");
         cSpan.text(charityName);
 

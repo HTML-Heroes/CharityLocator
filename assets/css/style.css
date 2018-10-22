@@ -1,3 +1,5 @@
+/* importing google font */
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 /* using Materialize css */
 body{
     /* background-color: bisque; */
@@ -10,45 +12,82 @@ body{
     background-attachment: fixed;
 }
 #apiInputs{
-    margin: 25px 0;
+    margin-top: 20px;
+    margin-left: 30px;
     padding: 20px;
-    border: 1px solid lightgray;
+    border: 2px solid darkgray;
     background-color: white;
+    width: 400px;
+    height: 265px;
+    border-radius: 3px;
 }
-#containerBody{
-  
-    background-color: blanchedalmond;
+#search{
+    background-color: black;
+    color: white;
+    border-radius: 3px;
 }
-
-
+#search:hover{
+    transform: scale(1.1);
+    transition: 1s;
+    color: red;
+}
+label .active{
+    color: black;
+}
+.input-field {
+    margin-bottom: 0;
+}
+input:focus {
+    border-bottom: 1px solid black !important;
+    box-shadow: 0 1px 0 0 black !important;
+}
+.input-field input[type=text]:focus + label {
+    color: red !important;
+  }
 
 #rowOne{
     background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1kOhRnIjzoMP98e4QfxyeujiCbqrEhtW-H3LQH61lXK1dF72R-A');
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
-#infoOne{
-   
-    text-align: center;
-    /* margin-left: 50px; */
-    outline-color: blue;
-    outline-width: 10px;
-    /* background-color: aqua; */
-    min-height: 300px;
+.card-title {
+    font-family: 'Slabo 27px', serif;
+    font-size: 48px;
+    text-align: center!important;
+    position: relative;
+    padding: 30px;
 }
-
-/* #rowTwo{
-    background-color: deeppink;
-} */
-
-#headerRow{
+.card-content {
+    color: red;
+    font-size: larger;
+    font-weight: bold;
+}
+.card .card-action {
+    cursor: pointer;
+    font-size: 15px!important;
+    padding: 10px;
+    text-decoration: underline;
     
+}
+.moreInfoLink{
+    padding-bottom: 5px;
+    color: rgb(116, 116, 116)!important;
+}
+.moreInfoLink:hover{
+    color: black!important;
+}
+/* #infoOne{
+   
     text-align: center;
     margin-left: 50px;
     outline-color: blue;
-    background: purple;
-}
-#infoOne button{
+    outline-width: 10px;
+    background-color: aqua;
+    min-height: 300px;
+} */
+
+/* #infoOne button{
     background-color: lavenderblush;
     border: 1px solid gray;
     font-family: 'Times New Roman', Times, serif;
@@ -62,10 +101,13 @@ body{
 #infoOne button:hover{
     transform: scale(1.1);
     transition: 2s;
-}
+} */
 /* https://www.tutorialspoint.com/materialize/materialize_form.htm */
 
 #pictureOne{
     background-image: url(../images/image.png);
     
+}
+footer{
+    bottom: 0;
 }
