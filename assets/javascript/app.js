@@ -93,7 +93,7 @@ $(document).ready(function () {
         var cInfo = $('<div>');
         var cInfoContent = $('<p>');
         var cHREF = $('<a>')
-            .addClass("moreInfoLink lighten-5 btn modal-trigger")
+            .addClass("moreInfoLink lighten-5 btn grey lighten-2 modal-trigger")
             .attr("href","#modal1")
             .attr("id", ein)
             .text("More Charity Info →");
