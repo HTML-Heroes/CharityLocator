@@ -93,7 +93,7 @@ $(document).ready(function () {
         var cInfo = $('<div>');
         var cInfoContent = $('<p>');
         var cHREF = $('<a>')
-            .addClass("moreInfoLink lighten-5 btn grey lighten-2 modal-trigger")
+            .addClass("moreInfoLink btn grey lighten-2 modal-trigger")
             .attr("href","#modal1")
             .attr("id", ein)
             .text("More Charity Info →");
@@ -142,7 +142,7 @@ $(document).ready(function () {
 
             if (headline) {
                 console.log(headline);
-                $articleListItem.append($("<span>")
+                $articleListItem.append($("<h5>")
                     .text(headline)
                     .addClass("headline"));
             }
@@ -222,7 +222,7 @@ $(document).ready(function () {
         };
 
         queryArticleURL = queryURL + $.param(queryParams);
-        console.log("Article URL call" + queryArticleURL);
+        console.log("Article URL call " + queryArticleURL);
 
         // Performing an AJAX request with the queryURL
         $.ajax({
@@ -232,7 +232,11 @@ $(document).ready(function () {
             // After data comes back from the request
             .then(function (response) {
                 // console.log(response);
-                showArticles(response);
+                if (response.articles.length > 0) {
+                    showArticles(response);
+                } else {
+                    $("#relatedArticles").text("No related articles found.");
+                };
             });
     }
 
