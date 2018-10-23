@@ -119,7 +119,7 @@ footer{
     margin-bottom: 10px;
 }
 
-.url {
+.url,.website {
     color:#01579b;
 }
 
@@ -151,4 +151,8 @@ footer{
 }
 .modal-close{
     color: white!important;
+}
+
+#mission {
+    margin: 15px 0px 10px;
 }

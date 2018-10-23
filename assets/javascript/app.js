@@ -121,6 +121,7 @@ $(document).ready(function () {
    
 
     function showArticles(response) {
+
         $("#relatedArticles").empty();
 
         var articles = response.articles;
@@ -134,8 +135,6 @@ $(document).ready(function () {
         for (var i = 0; i < numArticles; i++) {
             // Get specific article info for current index
             var article = articles[i];
-            // Increase the articleCount (track article # - starting at 1)
-            var articleCount = i + 1;
 
             // If the article has a headline, log and append to $articleList
             var headline = article.title;
@@ -243,8 +242,8 @@ $(document).ready(function () {
 
     function getOrganization(ein, APPID, APIKEY) {
         //location.href="more.html";
-
         var orgArea = $("#orgInfo").empty();
+        $(".modal-content").scrollTop(0);
 
 
         var queryURL = "https://api.data.charitynavigator.org/v2/Organizations/" + ein + "?app_id=" + APPID + "&app_key=" + APIKEY;
