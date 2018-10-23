@@ -11,6 +11,28 @@ body{
     background-position: center; 
     background-attachment: fixed;
 }
+h5{
+    /* font-size: 280%; */
+    font-family: 'Dosis', sans-serif;
+}
+
+#infoTwo{
+    font-family: 'Dosis', sans-serif;
+}
+.list-group-item {
+    font-family: 'Dosis', sans-serif;
+   /* border-width: 30px;
+   border-color: red; */
+   /* border: 1px solid red; */
+  border-bottom: 2px solid red;
+   padding-top: 10px;
+   padding-right: 10px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+
+}
+
+
 #apiInputs{
     margin-top: 20px;
     margin-left: 30px;
@@ -72,6 +94,7 @@ input:focus {
 
 .card {
     text-align:center;
+    min-height: 200px;
 }
 
 .moreInfoLink{
@@ -97,4 +120,29 @@ footer{
     #apiInputs {
         width: auto;
     }
+}
+
+.headline{
+    font-size: 120%;
+    
+}
+
+#orgInfo{
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    margin-bottom: 20px;
+
+}
+#charName{
+    font-size: 150%;
+}
+#modal1{
+    background-color: #e0e0e0;
+}
+.modal-footer{
+    background-color: black!important;
+    /* color: white!important; */
+}
+.modal-close{
+    color: white!important;
 }
