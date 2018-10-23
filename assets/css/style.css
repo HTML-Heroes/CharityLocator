@@ -11,6 +11,21 @@ body{
     background-position: center; 
     background-attachment: fixed;
 }
+h5{
+    /* font-size: 280%; */
+    font-family: 'Dosis', sans-serif;
+}
+list-group-item.articleHeadline{
+    font-family: 'Dosis', sans-serif;
+   color:  green; 
+   padding-top: 10px;
+   padding-right: 10px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+
+}
+
+
 #apiInputs{
     margin-top: 20px;
     margin-left: 30px;
