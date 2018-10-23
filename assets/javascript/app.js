@@ -92,20 +92,20 @@ $(document).ready(function () {
         var cSpan = $('<span>');
         var cInfo = $('<div>');
         var cInfoContent = $('<p>');
-        var cHREF = $('<a>').addClass("moreInfoLink");
+        var cHREF = $('<a>')
+            .addClass("moreInfoLink waves-effect waves-light btn modal-trigger")
+            .attr("href","#modal1")
+            .attr("id", ein)
+            .text("More Charity Info →");
 
         charityCrd.addClass("card charity lighten-5 z-depth-3");
         cSpan.addClass("card-title");
         cSpan.text(charityName);
 
         cInfo.addClass("card-content");
-        cInfoContent.text("Location: " + state + "📍");
+        cInfoContent.text("📍Location: " + state);
 
         cSrc = $('<div>').addClass("card-action");
-        //id should be the ein 
-        cHREF.attr("id", ein);
-        // cHREF.attr("href","more.html");
-        cHREF.text("More Charity Info →");
 
         cSrc.append(cHREF);
         cInfoContent.append(cSrc);
@@ -116,6 +116,8 @@ $(document).ready(function () {
 
         $("#infoOne").prepend(cColDiv);
     };
+
+   
 
     function showArticles(response) {
         $("#pictureTwo").empty();
@@ -140,26 +142,25 @@ $(document).ready(function () {
 
             if (headline) {
                 console.log(headline);
-                $articleListItem.append(
-                    "<span class='label label-primary'>" +
-                    articleCount +
-                    "</span>" +
-                    "<strong> " +
-                    headline +
-                    "</strong>"
-                );
+                $articleListItem.append($("<span>")
+                    .text(articleCount+" "+headline)
+                    .addClass("headline"));
             }
             var source = article.source.name;
             if (source) {
                 console.log(source);
-                $articleListItem.append("<h5>Source: " + source + "</h5>");
+                $articleListItem.append($("<h5>")
+                    .addClass("source")
+                    .text("Source: " + source));
             }
 
             // If the article has a byline, log and append to $articleList
             var byline = article.author;
             if (byline) {
                 console.log(byline);
-                $articleListItem.append("<h5>By: "+ byline + "</h5>");
+                $articleListItem.append($("<h5>")
+                    .addClass("byline")
+                    .text("By: "+ byline));
             }
 
             // Log published date, and append to document if exists
@@ -168,18 +169,26 @@ $(document).ready(function () {
 
             console.log(pubDate);
             if (pubDate) {
-                $articleListItem.append("<h5>Published Date: " + pubDate + "</h5>");
+                $articleListItem.append($("<h5>")
+                    .addClass("pubDate")
+                    .text("Published Date: " + pubDate));
             }
 
             // Log description, and append to document if exists
             var articleDescription = article.description;
             console.log(articleDescription);
             if (articleDescription) {
-                $articleListItem.append("<h5>Description: " + articleDescription + "</h5>");
+                $articleListItem.append($("<h5>")
+                    .addClass("description")
+                    .text("Description: " + articleDescription));
             }
 
             // Append and log url
-            $articleListItem.append("<a href='" + article.url + "' target=_blank'>" + article.url + "</a>");
+            $articleListItem.append($("<a>")
+                .addClass("url")
+                .attr("href",article.url)
+                .attr("target","_blank")
+                .text(article.url));
             console.log(article.url);
 
             // Append the article
@@ -373,5 +382,7 @@ $(document).ready(function () {
         var ein = $(this).attr("id");
         getOrganization(ein, APPID, APIKEY);
     });
+
+    $('.modal').modal();
 
 });
