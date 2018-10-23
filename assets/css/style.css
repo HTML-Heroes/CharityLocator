@@ -94,6 +94,7 @@ input:focus {
 
 .card {
     text-align:center;
+    min-height: 200px;
 }
 
 .moreInfoLink{
@@ -126,9 +127,22 @@ footer{
     
 }
 
-.source{
+#orgInfo{
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    margin-bottom: 20px;
 
 }
-.byline{
-
+#charName{
+    font-size: 150%;
+}
+#modal1{
+    background-color: #e0e0e0;
+}
+.modal-footer{
+    background-color: black!important;
+    /* color: white!important; */
+}
+.modal-close{
+    color: white!important;
 }
