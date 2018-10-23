@@ -93,7 +93,7 @@ $(document).ready(function () {
         var cInfo = $('<div>');
         var cInfoContent = $('<p>');
         var cHREF = $('<a>')
-            .addClass("moreInfoLink waves-effect waves-light btn modal-trigger")
+            .addClass("moreInfoLink lighten-5 btn modal-trigger")
             .attr("href","#modal1")
             .attr("id", ein)
             .text("More Charity Info →");
@@ -120,7 +120,7 @@ $(document).ready(function () {
    
 
     function showArticles(response) {
-        $("#pictureTwo").empty();
+        $("#relatedArticles").empty();
 
         var articles = response.articles;
 
@@ -143,7 +143,7 @@ $(document).ready(function () {
             if (headline) {
                 console.log(headline);
                 $articleListItem.append($("<span>")
-                    .text(articleCount+" "+headline)
+                    .text(headline)
                     .addClass("headline"));
             }
             var source = article.source.name;
@@ -195,7 +195,7 @@ $(document).ready(function () {
             $articleList.append($articleListItem);
         }
         // Add the newly created element to the DOM
-        $("#pictureTwo").append($articleList);
+        $("#relatedArticles").append($articleList);
         
     }
 
@@ -239,7 +239,8 @@ $(document).ready(function () {
     function getOrganization(ein, APPID, APIKEY) {
         //location.href="more.html";
 
-        var orgArea = $("#infoTwo").empty();
+        var orgArea = $("#orgInfo").empty();
+
 
         var queryURL = "https://api.data.charitynavigator.org/v2/Organizations/" + ein + "?app_id=" + APPID + "&app_key=" + APIKEY;
 
