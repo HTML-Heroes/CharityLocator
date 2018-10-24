@@ -13,7 +13,7 @@ function buildSearchQueryURL() {
 
     var queryParams = {
         "app_id": APPID,
-        "app_key": APIKEY
+        "app_key": APIKEY,
     };
 
     var searchTerm = $("#charityName")
@@ -21,10 +21,10 @@ function buildSearchQueryURL() {
         .trim();
 
     if (searchTerm) {
-        queryParams.search = searchTerm
+        queryParams.search = searchTerm;
+        queryParams.searchType = "NAME_ONLY";
     };
 
-    queryParams.searchType = "NAME_ONLY";
 
     var state = $("#state")
         .val().toUpperCase()
@@ -34,7 +34,8 @@ function buildSearchQueryURL() {
         queryParams.state = state
     };
 
-    console.log(queryURL + $.param(queryParams));
+    //console.log(queryParams);
+    //console.log(queryURL + $.param(queryParams));
     return queryURL + $.param(queryParams);
 }
 
@@ -46,7 +47,7 @@ $(document).ready(function () {
         // Empty the button region
         $("#infoOne").empty();
 
-        // Build the query URL for the ajax request to the NYT API
+        // Build the query URL for the ajax request to the Charity Navigator API
         var queryURL = buildSearchQueryURL();
 
         $.ajax({
@@ -85,7 +86,7 @@ $(document).ready(function () {
 
     function createCharityCards(charityName, ein, state) {
 
-        console.log("Creating the cards");
+        //console.log("Creating the cards");
 
         var cColDiv = $('<div>').addClass("col s12 m6");
         var charityCrd = $('<div>'); //overall div 
@@ -114,12 +115,13 @@ $(document).ready(function () {
         charityCrd.append(cSpan);
         cColDiv.append(charityCrd);
 
-        $("#infoOne").prepend(cColDiv);
+        $("#infoOne").append(cColDiv);
     };
 
    
 
     function showArticles(response) {
+
         $("#relatedArticles").empty();
 
         var articles = response.articles;
@@ -133,22 +135,20 @@ $(document).ready(function () {
         for (var i = 0; i < numArticles; i++) {
             // Get specific article info for current index
             var article = articles[i];
-            // Increase the articleCount (track article # - starting at 1)
-            var articleCount = i + 1;
 
             // If the article has a headline, log and append to $articleList
             var headline = article.title;
             var $articleListItem = $("<li class='list-group-item articleHeadline'>");
 
             if (headline) {
-                console.log(headline);
+                //console.log(headline);
                 $articleListItem.append($("<h5>")
                     .text(headline)
                     .addClass("headline"));
             }
             var source = article.source.name;
             if (source) {
-                console.log(source);
+                //console.log(source);
                 $articleListItem.append($("<h5>")
                     .addClass("source")
                     .text("Source: " + source));
@@ -157,7 +157,7 @@ $(document).ready(function () {
             // If the article has a byline, log and append to $articleList
             var byline = article.author;
             if (byline) {
-                console.log(byline);
+                //console.log(byline);
                 $articleListItem.append($("<h5>")
                     .addClass("byline")
                     .text("By: "+ byline));
@@ -167,7 +167,7 @@ $(document).ready(function () {
             var publishedDate = article.publishedAt;
             var pubDate = new Date(publishedDate).toDateString();
 
-            console.log(pubDate);
+            //console.log(pubDate);
             if (pubDate) {
                 $articleListItem.append($("<h5>")
                     .addClass("pubDate")
@@ -176,7 +176,7 @@ $(document).ready(function () {
 
             // Log description, and append to document if exists
             var articleDescription = article.description;
-            console.log(articleDescription);
+            //console.log(articleDescription);
             if (articleDescription) {
                 $articleListItem.append($("<h5>")
                     .addClass("description")
@@ -189,7 +189,7 @@ $(document).ready(function () {
                 .attr("href",article.url)
                 .attr("target","_blank")
                 .text(article.url));
-            console.log(article.url);
+            //console.log(article.url);
 
             // Append the article
             $articleList.append($articleListItem);
@@ -210,7 +210,7 @@ $(document).ready(function () {
     function relatedArticles(charName) {
 
         var charityName = createArticleKeyword(charName);
-        console.log(charityName);
+        //console.log(charityName);
 
         var queryURL = "https://newsapi.org/v2/everything?"
 
@@ -222,7 +222,7 @@ $(document).ready(function () {
         };
 
         queryArticleURL = queryURL + $.param(queryParams);
-        console.log("Article URL call " + queryArticleURL);
+        //console.log("Article URL call " + queryArticleURL);
 
         // Performing an AJAX request with the queryURL
         $.ajax({
@@ -231,7 +231,7 @@ $(document).ready(function () {
         })
             // After data comes back from the request
             .then(function (response) {
-                // console.log(response);
+                //console.log(response);
                 if (response.articles.length > 0) {
                     showArticles(response);
                 } else {
@@ -242,8 +242,8 @@ $(document).ready(function () {
 
     function getOrganization(ein, APPID, APIKEY) {
         //location.href="more.html";
-
         var orgArea = $("#orgInfo").empty();
+        $(".modal-content").scrollTop(0);
 
 
         var queryURL = "https://api.data.charitynavigator.org/v2/Organizations/" + ein + "?app_id=" + APPID + "&app_key=" + APIKEY;
@@ -269,7 +269,7 @@ $(document).ready(function () {
                 var state = response.mailingAddress.stateOrProvince;
                 var zip = response.mailingAddress.postalCode;
                 var website = response.websiteURL;
-                console.log(charName, tagLine, mission, deductability, subsection, classification, street, state, website);
+                //console.log(charName, tagLine, mission, deductability, subsection, classification, street, state, website);
 
                 var newDiv = $("<div>")
                     .addClass("charityInfo");
